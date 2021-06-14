@@ -16,5 +16,13 @@ def status():
     return json.dumps(status)
 
 
+@app.route("/metrics")
+def metrics():
+    metrics = {
+        'data': {'UserCount': 140, 'UserCountActive': 23}
+    }
+    return json.dumps(metrics)
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
